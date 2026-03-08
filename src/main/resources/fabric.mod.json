@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "arduinodamage",
+	"version": "${version}",
+	"name": "Arduino Damage Feedback",
+	"description": "Triggers a relay (buzzer + haptic motor) via Arduino whenever the player takes damage.",
+	"authors": [
+		"You"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/arduinodamage/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.arduinodamage.ArduinoDamageMod"
+		],
+		"client": [
+			"com.arduinodamage.ArduinoDamageModClient"
+		]
+	},
+	"mixins": [
+		"arduinodamage.mixins.json",
+		{
+			"config": "arduinodamage.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
